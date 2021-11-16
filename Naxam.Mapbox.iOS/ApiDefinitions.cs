@@ -710,7 +710,7 @@ namespace Mapbox
 
         // - (NSArray<id <MGLFeature>> *)leavesOfCluster:(MGLPointFeatureCluster *)cluster offset:(NSUInteger)offset limit:(NSUInteger)limit;
         [Export("leavesOfCluster:offset:limit:")]
-        IMGLFeature[] LeavesOfCluster(MGLPointFeatureCluster cluster, nuint offset, nuint limit);
+        IMGLFeature[] LeavesOfCluster(MGLPointFeatureCluster cluster, uint offset, uint limit);
 
         // - (NSArray<id<MGLFeature>> *)childrenOfCluster:(MGLPointFeatureCluster *)cluster;
         [Export("childrenOfCluster:")]
@@ -732,11 +732,11 @@ namespace Mapbox
     {
         // @optional -(NSArray<MGLShape<MGLFeature> *> * _Nonnull)featuresInTileAtX:(NSUInteger)x y:(NSUInteger)y zoomLevel:(NSUInteger)zoomLevel;
         [Export("featuresInTileAtX:y:zoomLevel:")]
-        NSObject[] FeaturesInTileAtX(nuint x, nuint y, nuint zoomLevel);
+        NSObject[] FeaturesInTileAtX(uint x, uint y, uint zoomLevel);
 
         // @optional -(NSArray<MGLShape<MGLFeature> *> * _Nonnull)featuresInCoordinateBounds:(MGLCoordinateBounds)bounds zoomLevel:(NSUInteger)zoomLevel;
         [Export("featuresInCoordinateBounds:zoomLevel:")]
-        NSObject[] FeaturesInCoordinateBounds(MGLCoordinateBounds bounds, nuint zoomLevel);
+        NSObject[] FeaturesInCoordinateBounds(MGLCoordinateBounds bounds, uint zoomLevel);
     }
 
     // @interface MGLComputedShapeSource : MGLSource
@@ -758,11 +758,11 @@ namespace Mapbox
 
         // -(void)invalidateTileAtX:(NSUInteger)x y:(NSUInteger)y zoomLevel:(NSUInteger)zoomLevel;
         [Export("invalidateTileAtX:y:zoomLevel:")]
-        void InvalidateTileAtX(nuint x, nuint y, nuint zoomLevel);
+        void InvalidateTileAtX(uint x, uint y, uint zoomLevel);
 
         // -(void)setFeatures:(NSArray<MGLShape<MGLFeature> *> * _Nonnull)features inTileAtX:(NSUInteger)x y:(NSUInteger)y zoomLevel:(NSUInteger)zoomLevel;
         [Export("setFeatures:inTileAtX:y:zoomLevel:")]
-        void SetFeatures(NSObject[] features, nuint x, nuint y, nuint zoomLevel);
+        void SetFeatures(NSObject[] features, uint x, uint y, uint zoomLevel);
 
         // @property (nonatomic, weak) id<MGLComputedShapeSourceDataSource> _Nullable dataSource;
         [NullAllowed, Export("dataSource", ArgumentSemantic.Weak)]
@@ -838,7 +838,7 @@ namespace Mapbox
         [Static]
         [Export("shapeWithData:encoding:error:")]
         [return: NullAllowed]
-        MGLShape ShapeWithData(NSData data, nuint encoding, [NullAllowed] out NSError outError);
+        MGLShape ShapeWithData(NSData data, uint encoding, [NullAllowed] out NSError outError);
 
         // @property (copy, nonatomic) NSString * _Nullable title;
         [NullAllowed, Export("title")]
@@ -850,7 +850,7 @@ namespace Mapbox
 
         // -(NSData * _Nonnull)geoJSONDataUsingEncoding:(NSStringEncoding)encoding;
         [Export("geoJSONDataUsingEncoding:")]
-        NSData GeoJSONDataUsingEncoding(nuint encoding);
+        NSData GeoJSONDataUsingEncoding(uint encoding);
     }
 
     // @interface MGLMultiPoint : MGLShape
@@ -863,7 +863,7 @@ namespace Mapbox
 
         // @property (readonly, nonatomic) NSUInteger pointCount;
         [Export("pointCount")]
-        nuint PointCount { get; }
+        uint PointCount { get; }
 
         // -(void)getCoordinates:(CLLocationCoordinate2D * _Nonnull)coords range:(NSRange)range;
         [Export("getCoordinates:range:")]
@@ -871,15 +871,15 @@ namespace Mapbox
 
         // -(void)setCoordinates:(CLLocationCoordinate2D * _Nonnull)coords count:(NSUInteger)count;
         [Export("setCoordinates:count:")]
-        unsafe void SetCoordinates(ref CLLocationCoordinate2D coords, nuint count);
+        unsafe void SetCoordinates(ref CLLocationCoordinate2D coords, uint count);
 
         // -(void)insertCoordinates:(const CLLocationCoordinate2D * _Nonnull)coords count:(NSUInteger)count atIndex:(NSUInteger)index;
         [Export("insertCoordinates:count:atIndex:")]
-        unsafe void InsertCoordinates(ref CLLocationCoordinate2D coords, nuint count, nuint index);
+        unsafe void InsertCoordinates(ref CLLocationCoordinate2D coords, uint count, uint index);
 
         // -(void)appendCoordinates:(const CLLocationCoordinate2D * _Nonnull)coords count:(NSUInteger)count;
         [Export("appendCoordinates:count:")]
-        unsafe void AppendCoordinates(ref CLLocationCoordinate2D coords, nuint count);
+        unsafe void AppendCoordinates(ref CLLocationCoordinate2D coords, uint count);
 
         // -(void)replaceCoordinatesInRange:(NSRange)range withCoordinates:(const CLLocationCoordinate2D * _Nonnull)coords;
         [Export("replaceCoordinatesInRange:withCoordinates:")]
@@ -887,7 +887,7 @@ namespace Mapbox
 
         // -(void)replaceCoordinatesInRange:(NSRange)range withCoordinates:(const CLLocationCoordinate2D * _Nonnull)coords count:(NSUInteger)count;
         [Export("replaceCoordinatesInRange:withCoordinates:count:")]
-        unsafe void ReplaceCoordinatesInRange(NSRange range, ref CLLocationCoordinate2D coords, nuint count);
+        unsafe void ReplaceCoordinatesInRange(NSRange range, ref CLLocationCoordinate2D coords, uint count);
 
         // -(void)removeCoordinatesInRange:(NSRange)range;
         [Export("removeCoordinatesInRange:")]
@@ -921,7 +921,7 @@ namespace Mapbox
         // +(instancetype _Nonnull)polylineWithCoordinates:(const CLLocationCoordinate2D * _Nonnull)coords count:(NSUInteger)count;
         [Static]
         [Export("polylineWithCoordinates:count:")]
-        unsafe MGLPolyline PolylineWithCoordinates(ref CLLocationCoordinate2D coords, nuint count);
+        unsafe MGLPolyline PolylineWithCoordinates(ref CLLocationCoordinate2D coords, uint count);
     }
 
     // @interface MGLMultiPolyline : MGLShape <MGLOverlay>
@@ -949,12 +949,12 @@ namespace Mapbox
         // +(instancetype _Nonnull)polygonWithCoordinates:(const CLLocationCoordinate2D * _Nonnull)coords count:(NSUInteger)count;
         [Static]
         [Export("polygonWithCoordinates:count:")]
-        unsafe MGLPolygon PolygonWithCoordinates(ref CLLocationCoordinate2D coords, nuint count);
+        unsafe MGLPolygon PolygonWithCoordinates(ref CLLocationCoordinate2D coords, uint count);
 
         // +(instancetype)polygonWithCoordinates:(const CLLocationCoordinate2D *)coords count:(NSUInteger)count interiorPolygons:(nullable NSArray<MGLPolygon *> *)interiorPolygons;
         [Static]
         [Export("polygonWithCoordinates:count:interiorPolygons:")]
-        unsafe MGLPolygon PolygonWithCoordinates(ref CLLocationCoordinate2D coords, nuint count, [NullAllowed] MGLPolygon[] interiorPolygons);
+        unsafe MGLPolygon PolygonWithCoordinates(ref CLLocationCoordinate2D coords, uint count, [NullAllowed] MGLPolygon[] interiorPolygons);
     }
 
     // @interface MGLMultiPolygon : MGLShape <MGLOverlay>
@@ -988,7 +988,7 @@ namespace Mapbox
         // +(instancetype)pointCollectionWithCoordinates:(const CLLocationCoordinate2D *)coords count:(NSUInteger)count;
         [Static]
         [Export("pointCollectionWithCoordinates:count:")]
-        unsafe MGLPointCollection PointCollectionWithCoordinates(ref CLLocationCoordinate2D coords, nuint count);
+        unsafe MGLPointCollection PointCollectionWithCoordinates(ref CLLocationCoordinate2D coords, uint count);
 
         // @property (readonly, nonatomic) CLLocationCoordinate2D * coordinates __attribute__((objc_returns_inner_pointer));
         [Export("coordinates")]
@@ -996,7 +996,7 @@ namespace Mapbox
 
         // @property (readonly, nonatomic) NSUInteger pointCount;
         [Export("pointCount")]
-        nuint PointCount { get; }
+        uint PointCount { get; }
 
         // -(void)getCoordinates:(CLLocationCoordinate2D *)coords range:(NSRange)range;
         [Export("getCoordinates:range:")]
@@ -1736,7 +1736,7 @@ namespace Mapbox
     {
         // @property (readonly, nonatomic) NSUInteger identifier;
         [Export("identifier")]
-        nuint Identifier { get; }
+        uint Identifier { get; }
 
         // -(void)notifyWithEvent:(MGLEvent * _Nonnull)event;
         [Export("notifyWithEvent:")]
@@ -2099,11 +2099,11 @@ namespace Mapbox
 
         // -(void)setVisibleCoordinates:(const CLLocationCoordinate2D * _Nonnull)coordinates count:(NSUInteger)count edgePadding:(UIEdgeInsets)insets animated:(BOOL)animated;
         [Export("setVisibleCoordinates:count:edgePadding:animated:")]
-        unsafe void SetVisibleCoordinates(ref CLLocationCoordinate2D coordinates, nuint count, UIEdgeInsets insets, bool animated);
+        unsafe void SetVisibleCoordinates(ref CLLocationCoordinate2D coordinates, uint count, UIEdgeInsets insets, bool animated);
 
         // -(void)setVisibleCoordinates:(const CLLocationCoordinate2D * _Nonnull)coordinates count:(NSUInteger)count edgePadding:(UIEdgeInsets)insets direction:(CLLocationDirection)direction duration:(NSTimeInterval)duration animationTimingFunction:(CAMediaTimingFunction * _Nullable)function completionHandler:(void (^ _Nullable)(void))completion;
         [Export("setVisibleCoordinates:count:edgePadding:direction:duration:animationTimingFunction:completionHandler:")]
-        unsafe void SetVisibleCoordinates(ref CLLocationCoordinate2D coordinates, nuint count, UIEdgeInsets insets, double direction, double duration, [NullAllowed] CAMediaTimingFunction function, [NullAllowed] Action completion);
+        unsafe void SetVisibleCoordinates(ref CLLocationCoordinate2D coordinates, uint count, UIEdgeInsets insets, double direction, double duration, [NullAllowed] CAMediaTimingFunction function, [NullAllowed] Action completion);
 
         // -(void)showAnnotations:(NSArray<id<MGLAnnotation>> * _Nonnull)annotations animated:(BOOL)animated;
         [Export("showAnnotations:animated:")]
@@ -3083,7 +3083,7 @@ namespace Mapbox
 
         // -(void)insertLayer:(MGLStyleLayer * _Nonnull)layer atIndex:(NSUInteger)index;
         [Export("insertLayer:atIndex:")]
-        void InsertLayer(MGLStyleLayer layer, nuint index);
+        void InsertLayer(MGLStyleLayer layer, uint index);
 
         // -(void)insertLayer:(MGLStyleLayer * _Nonnull)layer belowLayer:(MGLStyleLayer * _Nonnull)sibling;
         [Export("insertLayer:belowLayer:")]
@@ -3986,7 +3986,7 @@ namespace Mapbox
     }
 
     // typedef void (^MGLLoggingBlockHandler)(MGLLoggingLevel loggingLevel, NSString *filePath, NSUInteger line, NSString *message);
-    delegate void MGLLoggingBlockHandler(MGLLoggingLevel loggingLevel, string filePath, nuint line, string message);
+    delegate void MGLLoggingBlockHandler(MGLLoggingLevel loggingLevel, string filePath, uint line, string message);
 
     // @interface MGLLoggingConfiguration : NSObject
     [BaseType(typeof(NSObject))]
@@ -4070,7 +4070,7 @@ namespace Mapbox
     {
         // FOUNDATION_EXTERN MGL_EXPORT const NSUInteger MGLClusterIdentifierInvalid;  
         [Field("MGLClusterIdentifierInvalid", "__Internal")]
-        nuint Invalid { get; }
+        uint Invalid { get; }
     }
 
     // @protocol MGLCluster <MGLFeature>
