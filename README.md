@@ -15,12 +15,11 @@ We specialize in developing mobile applications using Xamarin and native technol
 ## Installation
 
 ```
-Install-Package Naxam.Mapbox.iOS
+
 ```
 
 ## Usage
 
-[Getting started with the package](https://blogs.naxam.net/using-mapbox-in-xamarin-ios-ffa9bdee13f4).
 Please don't forget to follow the official guide [here](https://www.mapbox.com/ios-sdk/).
 
 ## License
