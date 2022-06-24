@@ -8,6 +8,14 @@ using ObjCRuntime;
 
 namespace Mapbox
 {
+	[Native]
+	public enum MGLPanScrollingMode : ulong
+	{
+		Horizontal = 0,
+		Vertical,
+		Default
+	}
+
     [Native]
     public enum MGLOrnamentVisibility : ulong {
         /** A constant indicating that the ornament adapts to the current map state. */
@@ -138,7 +146,8 @@ namespace Mapbox
         SourceIdentifierMismatch = 8,
         /** An error occurred while modifying the offline storage database */
         ModifyingOfflineStorageFailed = 9,
-        SourceCannotBeRemovedFromStyle  = 10
+        SourceCannotBeRemovedFromStyle  = 10,
+        RenderingError = 11
     }
 
     [Flags]

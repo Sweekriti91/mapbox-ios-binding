@@ -54,6 +54,13 @@
       <Frameworks>GLKit</Frameworks>
       <ForceLoad>True</ForceLoad>
     </NativeReference>
+    <NativeReference Include="..\frameworks\MapboxMobileEvents.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Settings.bundle\ar.lproj\Root.strings" />

@@ -7,3 +7,6 @@ Podfile.lock
 sharpie/build
 sharpie/Pods
 ._*
+.DS_Store
+*.framework
+output/
