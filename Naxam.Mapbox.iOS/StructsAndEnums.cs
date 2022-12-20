@@ -226,11 +226,11 @@ namespace Mapbox
     [StructLayout (LayoutKind.Sequential)]
     public struct MGLMapPoint
     {
-        public nfloat x;
+        public NFloat x;
 
-        public nfloat y;
+        public NFloat y;
 
-        public nfloat zoomLevel;
+        public NFloat zoomLevel;
     }
 
     [StructLayout (LayoutKind.Sequential)]
@@ -320,7 +320,7 @@ namespace Mapbox
     [StructLayout (LayoutKind.Sequential)]
     public struct MGLSphericalPosition
     {
-        public nfloat radial;
+        public NFloat radial;
 
         public double azimuthal;
 
@@ -417,9 +417,9 @@ namespace Mapbox
 
         public double direction;
 
-        public nfloat pitch;
+        public NFloat pitch;
 
-        public nfloat fieldOfView;
+        public NFloat fieldOfView;
 
         public MGLMatrix4 projectionMatrix;
     }
