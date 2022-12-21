@@ -8,16 +8,17 @@ using ObjCRuntime;
 
 namespace Mapbox
 {
-	[Native]
-	public enum MGLPanScrollingMode : ulong
-	{
-		Horizontal = 0,
-		Vertical,
-		Default
-	}
+    [Native]
+    public enum MGLPanScrollingMode : ulong
+    {
+        Horizontal = 0,
+        Vertical,
+        Default
+    }
 
     [Native]
-    public enum MGLOrnamentVisibility : ulong {
+    public enum MGLOrnamentVisibility : ulong
+    {
         /** A constant indicating that the ornament adapts to the current map state. */
         Adaptive,
         /** A constant indicating that the ornament is always hidden. */
@@ -26,8 +27,9 @@ namespace Mapbox
         Visible
     }
 
-    [Native] 
-    public enum MGLTextWritingMode : ulong {
+    [Native]
+    public enum MGLTextWritingMode : ulong
+    {
         /**
         If a text's language supports horizontal writing mode, symbols with point
         placement would be laid out horizontally.
@@ -50,7 +52,7 @@ namespace Mapbox
     }
 
     [Native]
-	public enum MGLLoggingLevel : ulong
+    public enum MGLLoggingLevel : ulong
     {
         /**
         None-level messages are ignored.
@@ -85,7 +87,7 @@ namespace Mapbox
     }
 
     [Native]
-	public enum MGLSymbolZOrder : ulong
+    public enum MGLSymbolZOrder : ulong
     {
         /**
         If `MGLSymbolStyleLayer.symbolSortKey` is set, sort based on that.
@@ -107,7 +109,7 @@ namespace Mapbox
     }
 
     [Native]
-	public enum MGLOrnamentPosition : ulong
+    public enum MGLOrnamentPosition : ulong
     {
         /** Place the ornament in the top left of the map view. */
         TopLeft = 0,
@@ -120,7 +122,7 @@ namespace Mapbox
     }
 
     [Native]
-	public enum MGLAnnotationViewDragState : ulong
+    public enum MGLAnnotationViewDragState : ulong
     {
         None = 0,
         Starting,
@@ -146,7 +148,7 @@ namespace Mapbox
         SourceIdentifierMismatch = 8,
         /** An error occurred while modifying the offline storage database */
         ModifyingOfflineStorageFailed = 9,
-        SourceCannotBeRemovedFromStyle  = 10,
+        SourceCannotBeRemovedFromStyle = 10,
         RenderingError = 11
     }
 
@@ -161,7 +163,7 @@ namespace Mapbox
         OverdrawVisualizationMask = 1uL << 5
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLTransition
     {
         public double duration;
@@ -191,7 +193,7 @@ namespace Mapbox
         GestureZoomOut = 1uL << 6,
         GestureOneFingerZoom = 1uL << 7,
         GestureTilt = 1uL << 8,
-		TransitionCancelled = 1uL << 16
+        TransitionCancelled = 1uL << 16
     }
 
     [Native]
@@ -215,7 +217,7 @@ namespace Mapbox
         Viewport
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLCoordinateSpan
     {
         public double latitudeDelta;
@@ -223,17 +225,17 @@ namespace Mapbox
         public double longitudeDelta;
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLMapPoint
     {
-        public NFloat x;
+        public nfloat x;
 
-        public NFloat y;
+        public nfloat y;
 
-        public NFloat zoomLevel;
+        public nfloat zoomLevel;
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLMatrix4
     {
         public double m00;
@@ -269,7 +271,7 @@ namespace Mapbox
         public double m33;
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLCoordinateBounds
     {
         public CLLocationCoordinate2D sw;
@@ -277,7 +279,7 @@ namespace Mapbox
         public CLLocationCoordinate2D ne;
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLCoordinateQuad
     {
         public CLLocationCoordinate2D TopLeft;
@@ -317,10 +319,10 @@ namespace Mapbox
         Viewport
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLSphericalPosition
     {
-        public NFloat radial;
+        public nfloat radial;
 
         public double azimuthal;
 
@@ -377,7 +379,7 @@ namespace Mapbox
         Invalid = 4
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLOfflinePackProgress
     {
         public ulong countOfResourcesCompleted;
@@ -406,7 +408,7 @@ namespace Mapbox
         Image
     }
 
-    [StructLayout (LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
     public struct MGLStyleLayerDrawingContext
     {
         public CGSize size;
@@ -417,9 +419,9 @@ namespace Mapbox
 
         public double direction;
 
-        public NFloat pitch;
+        public nfloat pitch;
 
-        public NFloat fieldOfView;
+        public nfloat fieldOfView;
 
         public MGLMatrix4 projectionMatrix;
     }
@@ -482,7 +484,7 @@ namespace Mapbox
     {
         Point,
         Line,
-		LineCenter
+        LineCenter
     }
 
     [Native]
@@ -547,18 +549,18 @@ namespace Mapbox
     }
 
 
-	[Native]
-	public enum MGLMapViewPreferredFramesPerSecond : long
+    [Native]
+    public enum MGLMapViewPreferredFramesPerSecond : long
     {
         Default,
         LowPower,
-		Maximum
+        Maximum
     }
 
-	[Native]
-	public enum MGLRasterResamplingMode : ulong
+    [Native]
+    public enum MGLRasterResamplingMode : ulong
     {
-		Linear,
-		Nearest
+        Linear,
+        Nearest
     }
 }

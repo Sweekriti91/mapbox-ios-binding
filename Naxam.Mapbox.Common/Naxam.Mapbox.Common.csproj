@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Naxam.Mapbox.Common</RootNamespace>
-
+    <OutputType>Library</OutputType>
     <!-- <TargetFrameworkProfile>Profile111</TargetFrameworkProfile> -->
 
   </PropertyGroup>

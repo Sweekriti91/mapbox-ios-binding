@@ -1,159 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{3A2E7243-0208-4292-92B4-8C25F27B9843}</ProjectGuid>
-    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Exe</OutputType>
-    <LangVersion>latest</LangVersion>
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-ios</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<UseMaui>true</UseMaui>
+		<ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Naxam.Mapbox.iOSQs</RootNamespace>
-    <AssemblyName>Naxam.Mapbox.iOSQs</AssemblyName>
+    <MtouchLink>None</MtouchLink>
+
+   <MtouchDebug>true</MtouchDebug>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
-    <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchProfiling>true</MtouchProfiling>
-    <IOSDebuggerPort>47243</IOSDebuggerPort>
-    <MtouchLink>None</MtouchLink>
-    <MtouchArch>i386, x86_64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <LangVersion>Latest</LangVersion>
-<MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
+    <MtouchProfiling>true</MtouchProfiling> 
+
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\iPhone\Release</OutputPath>
-    <DefineConstants></DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchFloat32>true</MtouchFloat32>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <LangVersion>Latest</LangVersion>
-    <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
-    <DefineConstants></DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Tuyen Vu (A5A543Y7NV)</CodesignKey>
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
-    <MtouchLink>None</MtouchLink>
-    <MtouchArch>i386, x86_64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <LangVersion>Latest</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Tuyen Vu (A5A543Y7NV)</CodesignKey>
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
-    <MtouchDebug>true</MtouchDebug>
-    <MtouchFastDev>true</MtouchFastDev>
-    <MtouchProfiling>true</MtouchProfiling>
-    <MtouchFloat32>true</MtouchFloat32>
-    <CodesignEntitlements></CodesignEntitlements>
-    <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <LangVersion>Latest</LangVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
-    <Reference Include="Masonry">
-      <HintPath>..\..\packages\Masonry.0.6.4.0\lib\Xamarin.iOS\Masonry.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Naxam.Mapbox.iOS">
-      <HintPath>..\..\Naxam.Mapbox.iOS\bin\Release\Naxam.Mapbox.iOS.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png" />
-    <ImageAsset Include="Assets.xcassets\temple.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\temple.imageset\torri%402x.png" />
-    <ImageAsset Include="Assets.xcassets\temple.imageset\torri%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Assets.xcassets\temple.imageset\" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Info.plist" />
-    <None Include="Entitlements.plist" />
-    <None Include="packages.config" />
-  </ItemGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Naxam.Mapbox.Common">
+	    <HintPath>..\..\Naxam.Mapbox.Common\bin\Debug\net7.0\Naxam.Mapbox.Common.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Naxam.Mapbox.iOS">
+	    <HintPath>..\..\Naxam.Mapbox.iOS\bin\Debug\net7.0-ios\Naxam.Mapbox.iOS.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <ImageAsset Update="Assets.xcassets\temple.imageset\torri%402x.png">
+	    <Link>Assets.xcassets\temple.imageset\torri%402x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\temple.imageset\torri%403x.png">
+	    <Link>Assets.xcassets\temple.imageset\torri%403x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-40%402x.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-40%402x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-40%403x.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-40%403x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png</Link>
+	  </ImageAsset>
+	</ItemGroup>
+</Project>
+
+
+<!--
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -162,16 +68,7 @@
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="LayersListViewController.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Naxam.Mapbox.Common\Naxam.Mapbox.Common.csproj">
-      <Project>{A80B2873-6EAF-48A1-8445-2896815EFEE0}</Project>
-      <Name>Naxam.Mapbox.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Naxam.Mapbox.iOS\Naxam.Mapbox.iOS.csproj">
-      <Project>{682AEE9E-B4F4-4BED-8D14-23582E4992FE}</Project>
-      <Name>Naxam.Mapbox.iOS</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-</Project>
+  </ItemGroup>-->
+
+
+

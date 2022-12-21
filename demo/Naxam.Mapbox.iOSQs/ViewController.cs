@@ -89,7 +89,7 @@ namespace Naxam.Mapbox.iOSQs
                 new CLLocationCoordinate2D(latitude: mapView.CenterCoordinate.Latitude -0.04, longitude: mapView.CenterCoordinate.Longitude + 0.01),
                 new CLLocationCoordinate2D(latitude: mapView.CenterCoordinate.Latitude -0.04, longitude: mapView.CenterCoordinate.Longitude + 0.04)
             };
-            var polyline = MGLPolyline.PolylineWithCoordinates(ref coordinates[0], (nuint)coordinates.Length);
+            var polyline = MGLPolyline.PolylineWithCoordinates(ref coordinates[0], (uint)coordinates.Length);
             mapView.AddAnnotation(polyline);
 
         }

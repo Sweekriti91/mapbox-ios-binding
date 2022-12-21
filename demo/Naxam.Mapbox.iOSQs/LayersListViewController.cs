@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using Mapbox;
-using Masonry;
 using Naxam.Mapbox.Common;
 using Newtonsoft.Json.Linq;
 using UIKit;
@@ -122,10 +121,10 @@ namespace Naxam.Mapbox.iOSQs
         {
             base.ViewDidLoad();
             View.AddSubview(tableView);
-            tableView.MakeConstraints((mk) =>
-            {
-                mk.Edges.EqualTo(View);
-            });
+            //tableView.MakeConstraints((mk) =>
+            //{
+            //    mk.Edges.EqualTo(View);
+            //});
             var groupsDict = new Dictionary<string, List<DisplayedLayer>>();
 
             foreach (MGLStyleLayer layer in Style.Layers)

@@ -1,7 +1,8 @@
 ﻿using Foundation;
 using UIKit;
-using Mapbox;
+using Naxam.Mapbox.Common;
 using CoreGraphics;
+using Mapbox;
 
 namespace Naxam.Mapbox.iOSQs
 {
