@@ -13,10 +13,18 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchProfiling>true</MtouchProfiling> 
 
+    <!--<TargetFramework>net7.0-ios15.2</TargetFramework>-->
+    <SupportedOSPlatformVersion>14.4</SupportedOSPlatformVersion>
+    <TargetFramework>net7.0-ios15.4</TargetFramework>
   </PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
+	  <CodesignProvision>Automatic</CodesignProvision>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 	<ItemGroup>
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
@@ -31,11 +39,17 @@
 	  </Reference>
 	</ItemGroup>
 	<ItemGroup>
+	  <ImageAsset Update="Assets.xcassets\Contents.json">
+	    <Link>Assets.xcassets\Contents.json</Link>
+	  </ImageAsset>
 	  <ImageAsset Update="Assets.xcassets\temple.imageset\torri%402x.png">
 	    <Link>Assets.xcassets\temple.imageset\torri%402x.png</Link>
 	  </ImageAsset>
 	  <ImageAsset Update="Assets.xcassets\temple.imageset\torri%403x.png">
 	    <Link>Assets.xcassets\temple.imageset\torri%403x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\temple.imageset\Contents.json">
+	    <Link>Assets.xcassets\temple.imageset\Contents.json</Link>
 	  </ImageAsset>
 	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png">
 	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png</Link>
@@ -46,11 +60,23 @@
 	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-40%403x.png">
 	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-40%403x.png</Link>
 	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-Small.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-Small.png</Link>
+	  </ImageAsset>
 	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png">
 	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png</Link>
 	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-76.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-76.png</Link>
+	  </ImageAsset>
 	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png">
 	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-40.png">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-40.png</Link>
+	  </ImageAsset>
+	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Contents.json">
+	    <Link>Assets.xcassets\AppIcon.appiconset\Contents.json</Link>
 	  </ImageAsset>
 	  <ImageAsset Update="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png">
 	    <Link>Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png</Link>
