@@ -8,5 +8,5 @@ sharpie/build
 sharpie/Pods
 ._*
 .DS_Store
-*.framework
+# *.framework
 output/
